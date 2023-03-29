@@ -17,8 +17,8 @@
     let nine = false;
 
     let c = 0;
-    x = [];
-    o = [];
+    let x = [];
+    let o = [];
     let gameOver = false;
 
     function count1() {
@@ -232,6 +232,26 @@
     function easy() {
       document.getElementById("bigg").style = "visibility:visible;"
     }
+
+    function setDefault() {
+      gameOver = false;
+      x = [];
+      o = [];
+      one = false;
+      two = false;
+      three = false;
+      four = false;
+      five = false;
+      six = false;
+      seven = false;
+      eight = false;
+      nine = false;
+      for(let i=1;i<=9;i++){
+        document.getElementById("img"+i+"x").style = "visibility:hidden;"; 
+        document.getElementById("img"+i+"o").style = "visibility:hidden;"; 
+      }
+      document.getElementById("res").innerHTML = "";
+    }
   </script>
   <style>
     p {
@@ -308,7 +328,6 @@
       border-radius: 3px;
       transition: color 0.5s, background-color 0.5s;
       margin-bottom: 20px;
-      ;
     }
 
     button:hover {
@@ -370,6 +389,7 @@
     </div>
   </div>
   <p id="res"></p>
+  <button onclick="setDefault()">Play Again</button>
 </body>
 
 </html>
